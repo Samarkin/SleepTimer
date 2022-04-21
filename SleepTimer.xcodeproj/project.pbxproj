@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4DF059612811188C00057D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF059602811188C00057D0C /* AppDelegate.swift */; };
+		4DF059632811188C00057D0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF059622811188C00057D0C /* ViewController.swift */; };
+		4DF059652811188F00057D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF059642811188F00057D0C /* Assets.xcassets */; };
+		4DF059682811188F00057D0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF059662811188F00057D0C /* Main.storyboard */; };
+		4DF059732811188F00057D0C /* SleepTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF059722811188F00057D0C /* SleepTimerTests.swift */; };
+		4DF0597D2811188F00057D0C /* SleepTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF0597C2811188F00057D0C /* SleepTimerUITests.swift */; };
+		4DF0597F2811188F00057D0C /* SleepTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF0597E2811188F00057D0C /* SleepTimerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4DF0596F2811188F00057D0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DF059552811188C00057D0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4DF0595C2811188C00057D0C;
+			remoteInfo = SleepTimer;
+		};
+		4DF059792811188F00057D0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DF059552811188C00057D0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4DF0595C2811188C00057D0C;
+			remoteInfo = SleepTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4DF0595D2811188C00057D0C /* SleepTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF059602811188C00057D0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4DF059622811188C00057D0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DF059642811188F00057D0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4DF059672811188F00057D0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4DF059692811188F00057D0C /* SleepTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SleepTimer.entitlements; sourceTree = "<group>"; };
+		4DF0596E2811188F00057D0C /* SleepTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF059722811188F00057D0C /* SleepTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimerTests.swift; sourceTree = "<group>"; };
+		4DF059782811188F00057D0C /* SleepTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF0597C2811188F00057D0C /* SleepTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimerUITests.swift; sourceTree = "<group>"; };
+		4DF0597E2811188F00057D0C /* SleepTimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4DF0595A2811188C00057D0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF0596B2811188F00057D0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF059752811188F00057D0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4DF059542811188C00057D0C = {
+			isa = PBXGroup;
+			children = (
+				4DF0595F2811188C00057D0C /* SleepTimer */,
+				4DF059712811188F00057D0C /* SleepTimerTests */,
+				4DF0597B2811188F00057D0C /* SleepTimerUITests */,
+				4DF0595E2811188C00057D0C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4DF0595E2811188C00057D0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4DF0595D2811188C00057D0C /* SleepTimer.app */,
+				4DF0596E2811188F00057D0C /* SleepTimerTests.xctest */,
+				4DF059782811188F00057D0C /* SleepTimerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4DF0595F2811188C00057D0C /* SleepTimer */ = {
+			isa = PBXGroup;
+			children = (
+				4DF059602811188C00057D0C /* AppDelegate.swift */,
+				4DF059622811188C00057D0C /* ViewController.swift */,
+				4DF059642811188F00057D0C /* Assets.xcassets */,
+				4DF059662811188F00057D0C /* Main.storyboard */,
+				4DF059692811188F00057D0C /* SleepTimer.entitlements */,
+			);
+			path = SleepTimer;
+			sourceTree = "<group>";
+		};
+		4DF059712811188F00057D0C /* SleepTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				4DF059722811188F00057D0C /* SleepTimerTests.swift */,
+			);
+			path = SleepTimerTests;
+			sourceTree = "<group>";
+		};
+		4DF0597B2811188F00057D0C /* SleepTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4DF0597C2811188F00057D0C /* SleepTimerUITests.swift */,
+				4DF0597E2811188F00057D0C /* SleepTimerUITestsLaunchTests.swift */,
+			);
+			path = SleepTimerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4DF0595C2811188C00057D0C /* SleepTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DF059822811188F00057D0C /* Build configuration list for PBXNativeTarget "SleepTimer" */;
+			buildPhases = (
+				4DF059592811188C00057D0C /* Sources */,
+				4DF0595A2811188C00057D0C /* Frameworks */,
+				4DF0595B2811188C00057D0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SleepTimer;
+			productName = SleepTimer;
+			productReference = 4DF0595D2811188C00057D0C /* SleepTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4DF0596D2811188F00057D0C /* SleepTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DF059852811188F00057D0C /* Build configuration list for PBXNativeTarget "SleepTimerTests" */;
+			buildPhases = (
+				4DF0596A2811188F00057D0C /* Sources */,
+				4DF0596B2811188F00057D0C /* Frameworks */,
+				4DF0596C2811188F00057D0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4DF059702811188F00057D0C /* PBXTargetDependency */,
+			);
+			name = SleepTimerTests;
+			productName = SleepTimerTests;
+			productReference = 4DF0596E2811188F00057D0C /* SleepTimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4DF059772811188F00057D0C /* SleepTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DF059882811188F00057D0C /* Build configuration list for PBXNativeTarget "SleepTimerUITests" */;
+			buildPhases = (
+				4DF059742811188F00057D0C /* Sources */,
+				4DF059752811188F00057D0C /* Frameworks */,
+				4DF059762811188F00057D0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4DF0597A2811188F00057D0C /* PBXTargetDependency */,
+			);
+			name = SleepTimerUITests;
+			productName = SleepTimerUITests;
+			productReference = 4DF059782811188F00057D0C /* SleepTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4DF059552811188C00057D0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					4DF0595C2811188C00057D0C = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					4DF0596D2811188F00057D0C = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 4DF0595C2811188C00057D0C;
+					};
+					4DF059772811188F00057D0C = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 4DF0595C2811188C00057D0C;
+					};
+				};
+			};
+			buildConfigurationList = 4DF059582811188C00057D0C /* Build configuration list for PBXProject "SleepTimer" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4DF059542811188C00057D0C;
+			productRefGroup = 4DF0595E2811188C00057D0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4DF0595C2811188C00057D0C /* SleepTimer */,
+				4DF0596D2811188F00057D0C /* SleepTimerTests */,
+				4DF059772811188F00057D0C /* SleepTimerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4DF0595B2811188C00057D0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DF059652811188F00057D0C /* Assets.xcassets in Resources */,
+				4DF059682811188F00057D0C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF0596C2811188F00057D0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF059762811188F00057D0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4DF059592811188C00057D0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DF059632811188C00057D0C /* ViewController.swift in Sources */,
+				4DF059612811188C00057D0C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF0596A2811188F00057D0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DF059732811188F00057D0C /* SleepTimerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF059742811188F00057D0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DF0597F2811188F00057D0C /* SleepTimerUITestsLaunchTests.swift in Sources */,
+				4DF0597D2811188F00057D0C /* SleepTimerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4DF059702811188F00057D0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4DF0595C2811188C00057D0C /* SleepTimer */;
+			targetProxy = 4DF0596F2811188F00057D0C /* PBXContainerItemProxy */;
+		};
+		4DF0597A2811188F00057D0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4DF0595C2811188C00057D0C /* SleepTimer */;
+			targetProxy = 4DF059792811188F00057D0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4DF059662811188F00057D0C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DF059672811188F00057D0C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4DF059802811188F00057D0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4DF059812811188F00057D0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		4DF059832811188F00057D0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SleepTimer/SleepTimer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 585KF8XX2F;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.SleepTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4DF059842811188F00057D0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SleepTimer/SleepTimer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 585KF8XX2F;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.SleepTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		4DF059862811188F00057D0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 585KF8XX2F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.SleepTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SleepTimer.app/Contents/MacOS/SleepTimer";
+			};
+			name = Debug;
+		};
+		4DF059872811188F00057D0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 585KF8XX2F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.SleepTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SleepTimer.app/Contents/MacOS/SleepTimer";
+			};
+			name = Release;
+		};
+		4DF059892811188F00057D0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 585KF8XX2F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.SleepTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = SleepTimer;
+			};
+			name = Debug;
+		};
+		4DF0598A2811188F00057D0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 585KF8XX2F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.SleepTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = SleepTimer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4DF059582811188C00057D0C /* Build configuration list for PBXProject "SleepTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DF059802811188F00057D0C /* Debug */,
+				4DF059812811188F00057D0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DF059822811188F00057D0C /* Build configuration list for PBXNativeTarget "SleepTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DF059832811188F00057D0C /* Debug */,
+				4DF059842811188F00057D0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DF059852811188F00057D0C /* Build configuration list for PBXNativeTarget "SleepTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DF059862811188F00057D0C /* Debug */,
+				4DF059872811188F00057D0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DF059882811188F00057D0C /* Build configuration list for PBXNativeTarget "SleepTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DF059892811188F00057D0C /* Debug */,
+				4DF0598A2811188F00057D0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4DF059552811188C00057D0C /* Project object */;
+}
