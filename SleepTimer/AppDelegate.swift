@@ -20,6 +20,7 @@ private let timerOptions: [TimerOption] = _debugTimerOptions + [
 
 class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
     private var statusItem: NSStatusItem!
+    private var globalHotkeyMonitor: Any!
 
     private var appStatusMenuItem: NSMenuItem!
     private var enableTimerMenuItem: NSMenuItem!
@@ -59,6 +60,34 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
         statusItem.menu = menu
 
         refreshMenuState()
+
+        globalHotkeyMonitor = NSEvent.addGlobalMonitorForEvents(matching: [.keyDown]) { [weak self] in
+            // Ctrl + Shift + Option + Fn + T
+            guard $0.modifierFlags.contains([.control, .shift, .option, .command, .function]) && $0.keyCode == 17 else {
+                return
+            }
+            self?.globalHotkey()
+        }
+    }
+
+    private func globalHotkey() {
+        var nextTimerOption: TimerOption? = nil
+        if let sleepTimer = sleepTimer {
+            for timerOption in timerOptions {
+                let timeThreshold = min(timerOption.timeout * 0.66, timerOption.timeout - 3.seconds)
+                if sleepTimer.timeLeft < timeThreshold {
+                    nextTimerOption = timerOption
+                    break
+                }
+            }
+        } else {
+            nextTimerOption = timerOptions[0]
+        }
+        if let option = nextTimerOption {
+            setTimer(timeout: option.timeout)
+        } else {
+            disableTimer()
+        }
     }
 
     private func refreshMenuState() {
@@ -109,6 +138,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
     func timerExpiration(timer: SleepTimer) {
         self.sleepTimer = nil
         refreshMenuState()
+    }
+
+    func applicationWillTerminate(_ notification: Notification) {
+        if let globalHotkeyMonitor = globalHotkeyMonitor {
+            NSEvent.removeMonitor(globalHotkeyMonitor)
+        }
     }
 
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
