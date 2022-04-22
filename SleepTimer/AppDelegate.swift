@@ -1,5 +1,23 @@
 import Cocoa
 
+typealias TimerOption = (timeout: TimeInterval, title: String, keyEquivalent: String)
+
+#if DEBUG
+private let _debugTimerOptions: [TimerOption] = [
+    (timeout: 5.seconds, title: "5 seconds", keyEquivalent: "0"),
+]
+#else
+private let _debugTimerOptions = []
+#endif
+
+private let timerOptions: [TimerOption] = _debugTimerOptions + [
+    (timeout: 5.minutes, title: "5 minutes", keyEquivalent: "1"),
+    (timeout: 30.minutes, title: "30 minutes", keyEquivalent: "2"),
+    (timeout: 60.minutes, title: "1 hour", keyEquivalent: "3"),
+    (timeout: 90.minutes, title: "90 minutes", keyEquivalent: "4"),
+    (timeout: 120.minutes, title: "2 hours", keyEquivalent: "5"),
+]
+
 class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
     private var statusItem: NSStatusItem!
 
@@ -16,23 +34,22 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
     func setUpMenu() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
-        let menu = NSMenu(title: "blah!")
+        let menu = NSMenu()
 
         appStatusMenuItem = NSMenuItem()
-        appStatusMenuItem.title = "opa"
         appStatusMenuItem.isEnabled = false
         menu.addItem(appStatusMenuItem)
 
         enableTimerMenuItem = menu.addItem(withTitle: "Enable sleep timer", action: nil, keyEquivalent: "e")
         let enableSubmenu = NSMenu()
-#if DEBUG
-        enableSubmenu.addItem(withTitle: "5 seconds", action: #selector(setTimer5Seconds), keyEquivalent: "0")
-#endif
-        enableSubmenu.addItem(withTitle: "5 minutes", action: #selector(setTimer5Minutes), keyEquivalent: "1")
-        enableSubmenu.addItem(withTitle: "30 minutes", action: #selector(setTimer30Minutes), keyEquivalent: "2")
-        enableSubmenu.addItem(withTitle: "1 hour", action: #selector(setTimer1Hour), keyEquivalent: "3")
-        enableSubmenu.addItem(withTitle: "90 minutes", action: #selector(setTimer90Minutes), keyEquivalent: "4")
-        enableSubmenu.addItem(withTitle: "2 hours", action: #selector(setTimer2Hours), keyEquivalent: "5")
+
+        for timerOption in timerOptions {
+            let item = enableSubmenu.addItem(
+                withTitle: timerOption.title,
+                action: #selector(setTimerMenuItem(_:)),
+                keyEquivalent: timerOption.keyEquivalent)
+            item.tag = Int(timerOption.timeout)
+        }
         enableTimerMenuItem.submenu = enableSubmenu
 
         disableTimerMenuItem = menu.addItem(withTitle: "Disable sleep timer", action: #selector(disableTimer), keyEquivalent: "d")
@@ -69,30 +86,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
         refreshMenuState()
     }
 
-#if DEBUG
-    @objc func setTimer5Seconds() {
-        setTimer(timeout: 5.seconds)
-    }
-#endif
-
-    @objc func setTimer5Minutes() {
-        setTimer(timeout: 5.minutes)
-    }
-
-    @objc func setTimer30Minutes() {
-        setTimer(timeout: 30.minutes)
-    }
-
-    @objc func setTimer1Hour() {
-        setTimer(timeout: 60.minutes)
-    }
-
-    @objc func setTimer90Minutes() {
-        setTimer(timeout: 90.minutes)
-    }
-
-    @objc func setTimer2Hours() {
-        setTimer(timeout: 120.minutes)
+    @objc func setTimerMenuItem(_ sender: Any) {
+        guard let timeout = (sender as? NSMenuItem)?.tag else {
+            print("ERROR: Invalid sender for setTimer")
+            return
+        }
+        setTimer(timeout: TimeInterval(timeout))
     }
 
     @objc func disableTimer() {
