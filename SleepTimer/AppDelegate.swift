@@ -30,6 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         setUpMenu()
+        setUpHotkey()
     }
 
     func setUpMenu() {
@@ -60,7 +61,24 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
         statusItem.menu = menu
 
         refreshMenuState()
+    }
 
+    private func setUpHotkey() {
+        guard AXIsProcessTrusted() else {
+            let alert = NSAlert()
+            alert.messageText = "Turn on accessibility"
+            alert.informativeText = "SleepTimer needs special permisions to control your computer"
+            alert.alertStyle = .critical
+            alert.addButton(withTitle: "Go to Settings")
+            alert.addButton(withTitle: "Close application")
+            let response = alert.runModal()
+            if response == .alertFirstButtonReturn {
+                let prefPage = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!
+                NSWorkspace.shared.open(prefPage)
+            }
+            NSApplication.shared.terminate(self)
+            return
+        }
         globalHotkeyMonitor = NSEvent.addGlobalMonitorForEvents(matching: [.keyDown]) { [weak self] in
             // Ctrl + Shift + Option + Fn + T
             guard $0.modifierFlags.contains([.control, .shift, .option, .command, .function]) && $0.keyCode == 17 else {
