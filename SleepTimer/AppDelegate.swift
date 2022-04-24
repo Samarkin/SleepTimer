@@ -1,4 +1,5 @@
 import Cocoa
+import UserNotifications
 
 typealias TimerOption = (timeout: TimeInterval, title: String, keyEquivalent: String)
 
@@ -27,10 +28,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
     private var disableTimerMenuItem: NSMenuItem!
 
     private var sleepTimer: SleepTimer?
+    private var sendNotifications = false
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         setUpMenu()
         setUpHotkey()
+        setUpNotifications()
     }
 
     func setUpMenu() {
@@ -102,11 +105,40 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
             nextTimerOption = timerOptions[0]
         }
         if let option = nextTimerOption {
-            setTimer(timeout: option.timeout)
+            setTimer(timeout: option.timeout, title: option.title)
         } else {
             disableTimer()
         }
     }
+
+    private func setUpNotifications() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: .alert) { [weak self] in
+            guard $0 else {
+                print("Notifications disabled: \($1?.localizedDescription ?? "No error")")
+                return
+            }
+            self?.sendNotifications = true
+        }
+    }
+
+    private func sendNotification(body: String) {
+        guard sendNotifications else {
+            return
+        }
+        let center = UNUserNotificationCenter.current()
+        center.removeAllDeliveredNotifications()
+        let content = UNMutableNotificationContent()
+        content.title = "SleepTimer"
+        content.body = body
+        let notificationIdentifier = UUID().uuidString
+        let request = UNNotificationRequest(
+            identifier: notificationIdentifier,
+            content: content,
+            trigger: nil)
+        center.add(request)
+    }
+
 
     private func refreshMenuState() {
         let timerRunning = self.sleepTimer != nil
@@ -124,26 +156,28 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
         button.image = timerRunning ? Image.menubar_icon_active : Image.menubar_icon
     }
 
-    private func setTimer(timeout: TimeInterval) {
+    private func setTimer(timeout: TimeInterval, title: String) {
         let sleepTimer = SleepTimer(timeout: timeout)
         sleepTimer.delegate = self
         sleepTimer.start()
         self.sleepTimer = sleepTimer
 
         refreshMenuState()
+        sendNotification(body: "Timer set for \(title)")
     }
 
     @objc func setTimerMenuItem(_ sender: Any) {
-        guard let timeout = (sender as? NSMenuItem)?.tag else {
+        guard let menuItem = sender as? NSMenuItem else {
             print("ERROR: Invalid sender for setTimer")
             return
         }
-        setTimer(timeout: TimeInterval(timeout))
+        setTimer(timeout: TimeInterval(menuItem.tag), title: menuItem.title)
     }
 
     @objc func disableTimer() {
         self.sleepTimer = nil
         refreshMenuState()
+        sendNotification(body: "Timer disabled")
     }
 
     func timerTick(timer: SleepTimer) {

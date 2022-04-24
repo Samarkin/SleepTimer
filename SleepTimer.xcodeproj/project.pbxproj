@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D23E519281614A400DF3521 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D23E518281614A400DF3521 /* UserNotifications.framework */; };
 		4D9FAF3528112DE900EFC79B /* sleep_button_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9FAF3328112DE900EFC79B /* sleep_button_active.png */; };
 		4D9FAF3628112DE900EFC79B /* sleep_button_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9FAF3428112DE900EFC79B /* sleep_button_active@2x.png */; };
 		4DF059612811188C00057D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF059602811188C00057D0C /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D23E518281614A400DF3521 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4D9FAF3328112DE900EFC79B /* sleep_button_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleep_button_active.png; sourceTree = "<group>"; };
 		4D9FAF3428112DE900EFC79B /* sleep_button_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sleep_button_active@2x.png"; sourceTree = "<group>"; };
 		4DF0595D2811188C00057D0C /* SleepTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D23E519281614A400DF3521 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D23E517281614A300DF3521 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D23E518281614A400DF3521 /* UserNotifications.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4DF059542811188C00057D0C = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +107,7 @@
 				4DF059712811188F00057D0C /* SleepTimerTests */,
 				4DF0597B2811188F00057D0C /* SleepTimerUITests */,
 				4DF0595E2811188C00057D0C /* Products */,
+				4D23E517281614A300DF3521 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
