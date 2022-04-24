@@ -131,7 +131,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
     func timerTick(timer: SleepTimer) {
         let timeLeft = Int(timer.timeLeft)
         appStatusMenuItem.title = timeLeft > Int(2.minutes)
-            ? "\(timeLeft / 60) minutes left"
+            ? "\((timeLeft + 30) / 60) minutes left"
             : "\(timeLeft) seconds left"
     }
 
