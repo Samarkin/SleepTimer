@@ -191,6 +191,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
     func timerExpiration(timer: SleepTimer) {
         self.sleepTimer = nil
         refreshMenuState()
+        pauseMovist()
+    }
+
+    func pauseMovist() {
+        let app = Application(bundleIdentifier: "com.movist.Movist")
+        app.activate()
+        app.pressMenuItem(["Playback", "Pause"])
     }
 
     func applicationWillTerminate(_ notification: Notification) {

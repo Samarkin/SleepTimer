@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D23E519281614A400DF3521 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D23E518281614A400DF3521 /* UserNotifications.framework */; };
+		4D490972281647D0004F4886 /* AXUIElement+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D490971281647D0004F4886 /* AXUIElement+Helpers.swift */; };
+		4D49097528164874004F4886 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49097428164874004F4886 /* Application.swift */; };
 		4D9FAF3528112DE900EFC79B /* sleep_button_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9FAF3328112DE900EFC79B /* sleep_button_active.png */; };
 		4D9FAF3628112DE900EFC79B /* sleep_button_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9FAF3428112DE900EFC79B /* sleep_button_active@2x.png */; };
 		4DF059612811188C00057D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF059602811188C00057D0C /* AppDelegate.swift */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		4D23E518281614A400DF3521 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		4D490971281647D0004F4886 /* AXUIElement+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AXUIElement+Helpers.swift"; sourceTree = "<group>"; };
+		4D49097428164874004F4886 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		4D9FAF3328112DE900EFC79B /* sleep_button_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleep_button_active.png; sourceTree = "<group>"; };
 		4D9FAF3428112DE900EFC79B /* sleep_button_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sleep_button_active@2x.png"; sourceTree = "<group>"; };
 		4DF0595D2811188C00057D0C /* SleepTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +104,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4D49097328164856004F4886 /* ApplicationServices */ = {
+			isa = PBXGroup;
+			children = (
+				4D490971281647D0004F4886 /* AXUIElement+Helpers.swift */,
+				4D49097428164874004F4886 /* Application.swift */,
+			);
+			name = ApplicationServices;
+			sourceTree = "<group>";
+		};
 		4DF059542811188C00057D0C = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +137,7 @@
 		4DF0595F2811188C00057D0C /* SleepTimer */ = {
 			isa = PBXGroup;
 			children = (
+				4D49097328164856004F4886 /* ApplicationServices */,
 				4DF05996281122EB00057D0C /* Info.plist */,
 				4DF0598D28111F6D00057D0C /* images */,
 				4DF059602811188C00057D0C /* AppDelegate.swift */,
@@ -301,8 +315,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D49097528164874004F4886 /* Application.swift in Sources */,
 				4DF059632811188C00057D0C /* ViewController.swift in Sources */,
 				4DF0599A281126F600057D0C /* SleepTimer.swift in Sources */,
+				4D490972281647D0004F4886 /* AXUIElement+Helpers.swift in Sources */,
 				4DF059612811188C00057D0C /* AppDelegate.swift in Sources */,
 				4DF0598C28111DEC00057D0C /* main.swift in Sources */,
 				4DF059982811266700057D0C /* Double+TimeInterval.swift in Sources */,
