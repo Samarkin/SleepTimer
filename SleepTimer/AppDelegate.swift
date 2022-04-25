@@ -8,7 +8,7 @@ private let _debugTimerOptions: [TimerOption] = [
     (timeout: 5.seconds, title: "5 seconds", keyEquivalent: "0"),
 ]
 #else
-private let _debugTimerOptions = []
+private let _debugTimerOptions: [TimerOption] = []
 #endif
 
 private let timerOptions: [TimerOption] = _debugTimerOptions + [
