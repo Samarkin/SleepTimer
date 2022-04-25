@@ -118,6 +118,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
                 print("Notifications disabled: \($1?.localizedDescription ?? "No error")")
                 return
             }
+            center.removeAllDeliveredNotifications()
             self?.sendNotifications = true
         }
     }
