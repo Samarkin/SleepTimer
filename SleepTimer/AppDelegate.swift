@@ -83,8 +83,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
             return
         }
         globalHotkeyMonitor = NSEvent.addGlobalMonitorForEvents(matching: [.keyDown]) { [weak self] in
-            // Ctrl + Shift + Option + Fn + T
-            guard $0.modifierFlags.contains([.control, .shift, .option, .command, .function]) && $0.keyCode == 17 else {
+            // Ctrl + Shift + Option + Command + T
+            guard $0.modifierFlags.contains([.control, .shift, .option, .command]) && $0.keyCode == 17 else {
                 return
             }
             self?.globalHotkey()
