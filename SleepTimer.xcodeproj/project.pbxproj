@@ -13,7 +13,6 @@
 		4D9FAF3528112DE900EFC79B /* sleep_button_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9FAF3328112DE900EFC79B /* sleep_button_active.png */; };
 		4D9FAF3628112DE900EFC79B /* sleep_button_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9FAF3428112DE900EFC79B /* sleep_button_active@2x.png */; };
 		4DF059612811188C00057D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF059602811188C00057D0C /* AppDelegate.swift */; };
-		4DF059632811188C00057D0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF059622811188C00057D0C /* ViewController.swift */; };
 		4DF059652811188F00057D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF059642811188F00057D0C /* Assets.xcassets */; };
 		4DF059732811188F00057D0C /* SleepTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF059722811188F00057D0C /* SleepTimerTests.swift */; };
 		4DF0597D2811188F00057D0C /* SleepTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF0597C2811188F00057D0C /* SleepTimerUITests.swift */; };
@@ -52,7 +51,6 @@
 		4D9FAF3428112DE900EFC79B /* sleep_button_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sleep_button_active@2x.png"; sourceTree = "<group>"; };
 		4DF0595D2811188C00057D0C /* SleepTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF059602811188C00057D0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DF059622811188C00057D0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4DF059642811188F00057D0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DF059692811188F00057D0C /* SleepTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SleepTimer.entitlements; sourceTree = "<group>"; };
 		4DF0596E2811188F00057D0C /* SleepTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +139,6 @@
 				4DF05996281122EB00057D0C /* Info.plist */,
 				4DF0598D28111F6D00057D0C /* images */,
 				4DF059602811188C00057D0C /* AppDelegate.swift */,
-				4DF059622811188C00057D0C /* ViewController.swift */,
 				4DF059642811188F00057D0C /* Assets.xcassets */,
 				4DF059692811188F00057D0C /* SleepTimer.entitlements */,
 				4DF0598B28111DEC00057D0C /* main.swift */,
@@ -316,7 +313,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D49097528164874004F4886 /* Application.swift in Sources */,
-				4DF059632811188C00057D0C /* ViewController.swift in Sources */,
 				4DF0599A281126F600057D0C /* SleepTimer.swift in Sources */,
 				4D490972281647D0004F4886 /* AXUIElement+Helpers.swift in Sources */,
 				4DF059612811188C00057D0C /* AppDelegate.swift in Sources */,
