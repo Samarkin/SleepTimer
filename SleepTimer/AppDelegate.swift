@@ -95,7 +95,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
         var nextTimerOption: TimerOption? = nil
         if let sleepTimer = sleepTimer {
             for timerOption in timerOptions {
-                let timeThreshold = min(timerOption.timeout * 0.66, timerOption.timeout - 3.seconds)
+                let timeThreshold = timerOption.timeout - 3.seconds
                 if sleepTimer.timeLeft < timeThreshold {
                     nextTimerOption = timerOption
                     break
