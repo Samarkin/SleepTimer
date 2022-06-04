@@ -185,9 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DF059822811188F00057D0C /* Build configuration list for PBXNativeTarget "SleepTimer" */;
 			buildPhases = (
+				4D2982B6284BFD3E000C9057 /* ShellScript */,
 				4DF059592811188C00057D0C /* Sources */,
 				4DF0595A2811188C00057D0C /* Frameworks */,
 				4DF0595B2811188C00057D0C /* Resources */,
+				4D2982B7284C0201000C9057 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -242,7 +244,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					4DF0595C2811188C00057D0C = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -306,6 +308,43 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D2982B6284BFD3E000C9057 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "project_version=`git describe --abbrev=0 --match='*.*'`\ntotal_commits=`git rev-list --count HEAD`\nold_commits=`git rev-list --count tags/${project_version}`\nif git status --porcelain | grep -v Info.plist\nthen\nchanges=1\nelse\nchanges=0\nfi > /dev/null\nbuild=$((total_commits - old_commits + changes))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString ${project_version}\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${project_version}.${build}\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+		4D2982B7284C0201000C9057 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ ${CONFIGURATION} = Release ]; then\n  if git status --porcelain | grep \"^M\"; then\n    echo Git stage area is not clean\n    exit 1\n  else\n    git tag `defaults read \"${PROJECT_DIR}/${INFOPLIST_FILE}\" CFBundleVersion`\n  fi\nfi\ngit checkout -- \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4DF059592811188C00057D0C /* Sources */ = {
@@ -476,10 +515,9 @@
 				CODE_SIGN_ENTITLEMENTS = SleepTimer/SleepTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 585KF8XX2F;
 				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = SleepTimer/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -489,7 +527,6 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.SleepTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -505,10 +542,9 @@
 				CODE_SIGN_ENTITLEMENTS = SleepTimer/SleepTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 585KF8XX2F;
 				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = SleepTimer/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -518,7 +554,6 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.SleepTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
