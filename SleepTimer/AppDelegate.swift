@@ -1,22 +1,20 @@
 import Cocoa
 import UserNotifications
 
-typealias TimerOption = (timeout: TimeInterval, title: String, keyEquivalent: String)
+typealias TimerOption = (timeout: TimeInterval, title: String)
 
 #if DEBUG
-private let _debugTimerOptions: [TimerOption] = [
-    (timeout: 5.seconds, title: "5 seconds", keyEquivalent: "0"),
-]
+private let debugTimerOption: TimerOption? = (timeout: 5.seconds, title: "5 seconds")
 #else
-private let _debugTimerOptions: [TimerOption] = []
+private let debugTimerOption: TimerOption? = nil
 #endif
 
-private let timerOptions: [TimerOption] = _debugTimerOptions + [
-    (timeout: 5.minutes, title: "5 minutes", keyEquivalent: "1"),
-    (timeout: 30.minutes, title: "30 minutes", keyEquivalent: "2"),
-    (timeout: 60.minutes, title: "1 hour", keyEquivalent: "3"),
-    (timeout: 90.minutes, title: "90 minutes", keyEquivalent: "4"),
-    (timeout: 120.minutes, title: "2 hours", keyEquivalent: "5"),
+private let timerOptions: [TimerOption] = [
+    (timeout: 5.minutes, title: "5 minutes"),
+    (timeout: 30.minutes, title: "30 minutes"),
+    (timeout: 60.minutes, title: "1 hour"),
+    (timeout: 90.minutes, title: "90 minutes"),
+    (timeout: 120.minutes, title: "2 hours"),
 ]
 
 class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
@@ -48,12 +46,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
         enableTimerMenuItem = menu.addItem(withTitle: "Enable sleep timer", action: nil, keyEquivalent: "e")
         let enableSubmenu = NSMenu()
 
-        for timerOption in timerOptions {
+        func addSubmenuItem(forTimerOption timerOption: TimerOption, withKeyEquivalent keyEquivalent: String) {
             let item = enableSubmenu.addItem(
                 withTitle: timerOption.title,
                 action: #selector(setTimerMenuItem(_:)),
-                keyEquivalent: timerOption.keyEquivalent)
+                keyEquivalent: keyEquivalent)
             item.tag = Int(timerOption.timeout)
+        }
+        
+        if let debugTimerOption = debugTimerOption {
+            addSubmenuItem(forTimerOption: debugTimerOption, withKeyEquivalent: "0")
+        }
+        for (i,option) in timerOptions.enumerated() {
+            addSubmenuItem(forTimerOption: option, withKeyEquivalent: "\(i+1)")
         }
         enableTimerMenuItem.submenu = enableSubmenu
 
