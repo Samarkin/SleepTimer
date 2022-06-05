@@ -68,7 +68,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
 
         statusItem.menu = menu
 
-        refreshMenuState()
+        refreshAppState()
     }
 
     private func setUpHotkey() {
@@ -146,9 +146,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
     }
 
 
-    private func refreshMenuState() {
+    private func refreshAppState() {
         let timerRunning = self.sleepTimer != nil
-        if !timerRunning {
+        if timerRunning {
+            disableScreenSleep()
+        } else {
+            enableScreenSleep()
             appStatusMenuItem.title = "Timer is not running"
         }
 
@@ -168,7 +171,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
         sleepTimer.start()
         self.sleepTimer = sleepTimer
 
-        refreshMenuState()
+        refreshAppState()
         sendNotification(body: "Timer set for \(title)")
     }
 
@@ -182,7 +185,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
 
     @objc func disableTimer() {
         self.sleepTimer = nil
-        refreshMenuState()
+        refreshAppState()
         sendNotification(body: "Timer disabled")
     }
 
@@ -195,7 +198,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SleepTimerDelegate {
 
     func timerExpiration(timer: SleepTimer) {
         self.sleepTimer = nil
-        refreshMenuState()
+        refreshAppState()
         pauseMovist()
     }
 
